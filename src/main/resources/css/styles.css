@@ -1,0 +1,17 @@
+.dialog-pane-bg {
+    -fx-background-color: #212129;
+}
+
+.home-view-bg {
+    -fx-background-color: #212129;
+}
+
+.button-menu{
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-background-color: #1db954;
+    -fx-background-radius: 5;
+    -fx-background-radius: 50em;
+    -fx-padding: 4 8;
+}
+

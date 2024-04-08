@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<DialogPane styleClass="dialog-pane-bg" stylesheets="@../../../../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <Label text="Name: " GridPane.columnIndex="0" />
+            <TextField fx:id="name" GridPane.columnIndex="1" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints minHeight="0.0" prefHeight="0.0" />
+         </rowConstraints>
+        </GridPane>
+    </content>
+    <ButtonType fx:id="signInBtn" buttonData="OK_DONE" text="Sign in"/>
+    <ButtonType fx:id="cancelBtn" buttonData="CANCEL_CLOSE" text="Cancel" />
+    <padding>
+        <Insets left="10.0" />
+    </padding>
+</DialogPane>
