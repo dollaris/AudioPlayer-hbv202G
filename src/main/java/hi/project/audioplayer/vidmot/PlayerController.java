@@ -25,6 +25,9 @@ public class PlayerController {
     @FXML
     private Button fxPlaylist2;
 
+    /**
+     * Initializes the images for fxPlaylist1 and fxPlaylist2 with images of a lake and a forest.
+     */
     public void initialize() {
         ImageView img1 = new ImageView(new Image(getClass().getResourceAsStream("img/lake.jpeg")));
         ImageView img2 = new ImageView(new Image(getClass().getResourceAsStream("img/forest.jpeg")));
@@ -37,6 +40,13 @@ public class PlayerController {
         fxPlaylist1.setGraphic(img1);
         fxPlaylist2.setGraphic(img2);
     }
+
+    /**
+     * A description of the entire Java function.
+     *
+     * @param  e    description of parameter
+     * @return      description of return value
+     */
     @FXML
     public void onLogin(ActionEvent e) {
         Dialog<Account> dialog = new AccountDialog(new Account(""));
@@ -47,6 +57,13 @@ public class PlayerController {
             userName.setText(player.getName());
         }
     }
+
+    /**
+     * A description of the entire Java function.
+     *
+     * @param  e    description of parameter
+     * @throws IOException
+     */
     @FXML
     public void onChooseList(ActionEvent e) throws IOException {
         Button answer = (Button) e.getSource();

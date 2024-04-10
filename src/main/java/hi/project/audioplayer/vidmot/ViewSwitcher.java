@@ -11,10 +11,24 @@ import java.util.Map;
 public class ViewSwitcher {
     private static Map<View, Parent> cache = new HashMap<>();
     private static Scene scene;
+
+    /**
+     * Sets the scene for the ViewSwitcher.
+     *
+     * @param  scene  the scene to be set
+     * @return       void
+     */
     public static void setScene(Scene scene) {
         ViewSwitcher.scene = scene;
     }
 
+    /**
+     * A method to switch the view and handle caching.
+     *
+     * @param  view    the view to switch to
+     * @param  isCache flag indicating whether to cache the view
+     * @throws IOException if an I/O error occurs during the view switching process
+     */
     public static void switchTo(View view, boolean isCache) throws IOException {
         if (scene == null) {
             System.out.println("No scene was set");

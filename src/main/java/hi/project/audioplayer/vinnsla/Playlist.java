@@ -21,11 +21,18 @@
         private String playlistFile;
         private Song song;
 
+        // Constructor
         public Playlist(String playlist) throws IOException, URISyntaxException {
             this.playlistFile = playlist;
             readSong();
         }
 
+        /**
+         * A method to read songs from a playlist file, parse each line, create Song objects, and add them to a list.
+         *
+         * @throws IOException      if an I/O error occurs when reading the file
+         * @throws URISyntaxException if a string could not be parsed as a URI reference
+         */
         public void readSong() throws IOException, URISyntaxException {
             list = FXCollections.observableArrayList();
             Path paths = Paths.get(playlistFile);
@@ -48,6 +55,12 @@
                 }
             }
         }
+
+        /**
+         * A method to retrieve the current song from the list.
+         *
+         * @return         	the current song if index is within bounds, otherwise null
+         */
         public Song getCurrentSong() {
             if (index >= 0 && index < list.size()) {
                 return list.get(index);
@@ -55,6 +68,11 @@
             return null;
         }
 
+        /**
+         * A method to retrieve the next song in the list.
+         *
+         * @return         	the next song if index is within bounds, otherwise null
+         */
         public Song getNextSong() {
             index++;
             if (index >= list.size()) {
@@ -66,6 +84,11 @@
             return getCurrentSong();
         }
 
+        /**
+         * A description of the entire Java function.
+         *
+         * @return         	description of return value
+         */
         public ObservableList<Song> getSongs() {
             return list;
         }

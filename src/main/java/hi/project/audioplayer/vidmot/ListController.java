@@ -33,11 +33,22 @@
             private MediaPlayer mediaPlayer;
             private boolean isPlayed = false;
 
+            /**
+             * Initialize method to set up the playlist, update the UI, and handle song selection.
+             */
             public void initialize() {
                 playlist = getPlaylist();
                 if (playlist != null) {
                     fxListView.getItems().setAll(playlist.getSongs());
                     fxListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Song>() {
+                        /**
+                         * A description of the entire Java function.
+                         *
+                         * @param  observableValue	description of parameter
+                         * @param  song	description of parameter
+                         * @param  t1	description of parameter
+                         * @return         	description of return value
+                         */
                         @Override
                         public void changed(ObservableValue<? extends Song> observableValue, Song song, Song t1) {
                             if (t1 != null) {
@@ -81,6 +92,7 @@
                 ViewSwitcher.switchTo(View.MAIN, true);
             }
 
+
             @FXML
             private void playSong() {
                 if(!isPlayed) {
@@ -91,6 +103,9 @@
 
             }
 
+            /**
+             * Set the player, stop the media if already playing, update progress bar, and play next song.
+             */
             @FXML
             private void setPlayer() {
                 if (isPlayed) {
@@ -102,6 +117,13 @@
 
                 nextSong();
             }
+
+            /**
+             * Handles the play/pause action event.
+             *
+             * @param  e   The action event triggering the play/pause action
+             * @return     None
+             */
             @FXML
             public void onPlayPause(ActionEvent e) {
                 if (isPlayed) {
@@ -111,6 +133,12 @@
                 }
                 isPlayed = !isPlayed;
             }
+
+            /**
+             * Moves to the next song in the playlist. If there are no more songs,
+             * it either handles the end of the playlist or loops back to the first song.
+             *
+             */
             private void nextSong() {
                 Song nextSong = playlist.getNextSong();
 

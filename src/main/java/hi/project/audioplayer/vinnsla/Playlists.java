@@ -9,9 +9,16 @@ public class Playlists {
     private static Playlist[] playlists = new Playlist[NUMBER_OF_PLAYLISTS];
     private static final String[] fileNames = new String[]{"playlist-one.txt", "playlist-two.txt"};
 
+    /**
+     *  Constructor
+     */
     public Playlists() {
         initializePlaylists();
     }
+
+    /**
+     * Initialize the playlists
+     */
     public static void initializePlaylists() {
         // Initialize the playlists
         for (int i = 0; i < playlists.length; i++) {
@@ -25,9 +32,19 @@ public class Playlists {
         }
     }
 
+    /**
+     * Get the current playlist
+     */
     public static Playlist getPlaylist() {
         return playlists[index];
     }
+
+    /**
+     * Sets the playlist index if it's within the valid range.
+     *
+     * @param  index   the index to set
+     * @return          no return value
+     */
     public void setPlaylistIndex(int index) {
         if (index >= 0 && index < NUMBER_OF_PLAYLISTS) {
             this.index = index;

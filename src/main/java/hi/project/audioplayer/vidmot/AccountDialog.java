@@ -18,9 +18,15 @@
         private ButtonType cancelBtn;
 
 
+        //Constructor
         public AccountDialog() {
             super();
         }
+
+        /**
+         *  Constructor
+         * @param player
+         */
         public AccountDialog(Account player) {
             super();
             this.setTitle("Subscribe");
@@ -28,6 +34,11 @@
             initialize();
         }
 
+        /**
+         * Initialize the dialog by setting the dialog pane, property binding, result converter, and checking if the OK button is pressed.
+         *
+         */
+        @FXML
         private void initialize() {
             setDialogPane(readDialog());
             setPropertyBinding();
@@ -44,6 +55,10 @@
 
         }
 
+
+        /**
+         * This function sets the result converter for the dialog.
+         */
         private void setResultConverter() {
             setResultConverter( b -> {
                 if (b.getButtonData() == ButtonBar.ButtonData.OK_DONE) {
@@ -54,10 +69,18 @@
             });
         }
 
+        /**
+         * This function sets up a property binding for the name property.
+         */
         private void setPropertyBinding() {
             name.textProperty().bindBidirectional(player.nameProperty());
         }
 
+        /**
+         * A description of the entire Java function.
+         *
+         * @return         description of return value
+         */
         private DialogPane readDialog() {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("account-view.fxml"));
             try {
@@ -67,6 +90,7 @@
                 throw new RuntimeException(e);
             }
         }
+
 
         private void isOKBtn() {
             Node isOK = getDialogPane().lookupButton(signInBtn);
