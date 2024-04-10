@@ -1,4 +1,4 @@
 
 [README](..%2F..%2F..%2FREADME.md)
 
-![classDiagram](../resources/classDiagram.png)
+![classDiagram.png](classDiagram.png)
