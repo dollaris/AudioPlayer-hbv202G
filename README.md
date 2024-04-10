@@ -29,5 +29,5 @@ Simple JavaFX AudioPlayer application with simple interface for playing audio fi
 
 ### License
 
-This project is licensed under the MIT License 
+This project is licensed under the [MIT LICENSE](LICENSE)
 
