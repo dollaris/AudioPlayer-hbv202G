@@ -24,6 +24,11 @@ public class AudioApplication extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        try {
+            launch();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

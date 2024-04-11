@@ -1,0 +1,3 @@
+Warning: Path does not exist: classes/hi/project/audioplayer/vidmot/AudioApplication.class
+Warning: Path does not exist: classes/hi/project/audioplayer/vidmot/AudioApplication.class
+
